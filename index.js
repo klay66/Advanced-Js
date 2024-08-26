@@ -450,20 +450,197 @@
 // }
 
 
-// let urls = "https://google.com http://www.website.net web.com"; // http + https
-// let urlsRe = /(https?:\/\/)?(www.)?\w+.\w+/ig;
-// console.log(urls.match(urlsRe));
 
-let url1 = 'elzero.org';
-let url2 = 'http://elzero.org';
-let url3 = 'https://elzero.org';
-let url4 = 'https://www.elzero.org';
-let url5 = 'https://www.elzero.org:8080/articles.php?id=100&cat=topics';
 
-let re = /(https?:\/\/)?(www.)?\w+.org(:\d{4})?(\S+)?/ig;
+// let url1 = 'elzero.org';
+// let url2 = 'http://elzero.org';
+// let url3 = 'https://elzero.org';
+// let url4 = 'https://www.elzero.org';
+// let url5 = 'https://www.elzero.org:8080/articles.php?id=100&cat=topics';
 
-console.log(url1.match(re));
-console.log(url2.match(re));
-console.log(url3.match(re));
-console.log(url4.match(re));
-console.log(url5.match(re));
+// let re = /(https?:\/\/)?(www.)?\w+.org(:\d{4})?(\S+)?/ig;
+
+// console.log(url1.match(re));
+// console.log(url2.match(re));
+// console.log(url3.match(re));
+// console.log(url4.match(re));
+// console.log(url5.match(re));
+
+
+
+
+
+///////////////OOP\\\\\\\\\\\\\\\\\\\\\
+
+
+/*
+  Constructor Function
+*/
+
+// function User(id, username, salary) {
+//     this.i = id
+//     this.u = username
+//     this.s = salary
+// }
+// let userTwo = new User(101, "ahmed", 13000)
+// let userThree = new User(102, "selia", 191200)
+
+
+// console.log(userOne.i);
+// console.log(userOne.u);
+// console.log(userOne.s);
+
+// console.log(userTwo.i);
+// console.log(userTwo.u);
+// console.log(userTwo.s);
+
+// console.log(userThree.i);
+// console.log(userThree.u);
+// console.log(userThree.s);
+
+
+// class User {
+//     constructor(id, username, salary) {
+//         this.i = id;
+//         this.u = username || "Unknowen";
+//         this.s = salary < 2000 ? salary + 3000 : salary;
+//         this.msg = function () {
+//             return `Hello ${this.u} Your Salary Is ${this.s}`;
+//         }
+//     }
+//     writeMsg() {
+//         return `Hello ${this.u} Your Salary Is ${this.s}`;
+//     }
+// }
+
+// let userOne = new User(100, "nour", 1200)
+// let userTwo = new User(100, "", 2200)
+
+
+// console.log(userOne.i);
+// console.log(userOne.u);
+// console.log(userOne.msg());
+// console.log(userOne.writeMsg());
+
+// console.log(userTwo.i);
+// console.log(userTwo.u);
+// console.log(userTwo.msg);
+// console.log(userTwo.writeMsg);
+
+// console.log(userOne instanceof User);
+// console.log(userOne.constructor == User);
+
+
+// class User {
+//     constructor(id, username, salary) {
+//         this.i = id;
+//         this.u = username;
+//         this.s = salary;
+
+//     }
+//     uodeteName(newName) {
+//         this.u = newName
+//     }
+// }
+
+
+// let userOne = new User(100, "nour", 1200)
+
+// console.log(userOne.u);
+// userOne.uodeteName("selia")
+// console.log(userOne.u);
+
+// let strOne = "Elzero";
+// let strTwo = new String("Elzero");
+
+// console.log(typeof strOne);
+// console.log(typeof strTwo);
+
+// console.log(strOne instanceof String);
+// console.log(strTwo instanceof String);
+
+// console.log(strOne.constructor === String);
+// console.log(strTwo.constructor === String);
+
+// class User {
+//     static count = 0
+//     constructor(id, username, salary) {
+//         this.i = id;
+//         this.u = username;
+//         this.s = salary;
+//         User.count++;
+//     }
+//     static sayHello() {
+//         return `hello nour`
+
+//     }
+//     static countMembar() {
+//         return `${this.count} Membats Creat`
+//     }
+// }
+
+// let userOne = new User(100, "nour", 1200)
+// let userTwo = new User(101, "omar", 3200)
+
+
+// console.log(userOne.u);
+// console.log(userTwo.u);
+
+// console.log(User.count);
+// console.log(User.sayHello());
+
+
+// class User {
+//     constructor(id, username) {
+//         this.i = id;
+//         this.u = username;
+//     }
+//     sayHello() {
+//         return `Hello ${this.u}`;
+//     }
+// }
+
+// class Admin extends User {
+//     constructor(id, username, permission) {
+//         super(id, username)
+//         this.p = permission;
+//     }
+
+// }
+
+// class Superman extends Admin {
+//     constructor(id, username, permissions, ability) {
+//         super(id, username, permissions);
+//         this.a = ability;
+//     }
+// }
+
+// let userOne = new User(100, "Elzero");
+// let adminOne = new Admin(110, "Mahmoud", 1);
+
+// console.log(userOne.u);
+// console.log(userOne.sayHello());
+// console.log("####");
+// console.log(adminOne.i);
+// console.log(adminOne.u);
+// console.log(adminOne.p);
+// console.log(adminOne.sayHello());
+
+
+class User {
+    #e;
+    constructor(id, username, salary) {
+        this.i = id;
+        this.u = username;
+        this.#e = salary;
+
+    }
+    getSalary() {
+        return parseInt(this.#e);
+    }
+}
+
+let userOne = new User(100, "Elzero", "5000 Gneh");
+
+console.log(userOne.u);
+console.log(userOne.getSalary() * 0.3);
