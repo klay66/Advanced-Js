@@ -934,15 +934,207 @@
 
 
 
-let start = new Date()
+// let start = new Date()
 
 
-for (i = 0; i < 1000; i++) {
-    document.write(`<div>${i}</div>`)
-}
+// for (i = 0; i < 1000; i++) {
+//     document.write(`<div>${i}</div>`)
+// }
 
 
-let end = new Date()
-let duration = end - start;
+// let end = new Date()
+// let duration = end - start;
 
-console.log(duration);
+// console.log(duration);
+
+
+
+/*
+  Generators
+  - Generator Function Run Its Code When Required.
+  - Generator Function Return Special Object [Generator Object]
+  - Generators Are Iterable
+*/
+
+// function* generateNumbers() {
+//   yield 1;
+//   console.log("Hello After Yield 1");
+//   yield 2;
+//   yield 3;
+//   yield 4;
+// }
+
+
+// let generator = generateNumbers()
+
+// console.log(typeof generator);
+// console.log(generator);
+
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+
+
+// for (let value of generateNumbers()) {
+//   console.log(value);
+
+// }
+
+
+// for (let value of generator) {
+//   console.log(value);
+// }
+
+
+/*
+  Generators
+  - Delegate Generator
+*/
+
+// function* generateNums() {
+//   yield 1;
+//   yield 2;
+//   yield 3;
+// }
+
+// function* generateLetters() {
+//   yield "A";
+//   yield "B";
+//   yield "C";
+// }
+
+
+// function* generatorAll() {
+//   yield* generateNums()
+//   yield* generateLetters()
+
+//   yield* [1, 2, 3]
+// }
+
+// let generator = generatorAll()
+
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.return("Nour"));
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+
+
+
+/*
+  Generators
+  - Generate Infinite Numbers
+  - Use Return Inside Generators
+*/
+
+// function* generateNumbers() {
+//   // yield 1;
+//   // yield 2;
+//   // return "A";
+//   // yield 3;
+//   // yield 4;
+//   let index = 0;
+
+//   while (true) {
+//     yield index++;
+//   }
+// }
+
+// let generator = generateNumbers();
+
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+
+
+/*
+  Modules
+  - Import And Export
+*/
+
+// let a = 10;
+// let arr = [1, 2, 3, 4]
+
+// function saySomething() {
+//   return `Something`;
+// }
+
+// export { a, arr, saySomething };
+
+
+// export default function () {
+//   return `Hello`;
+// }
+
+
+
+/*
+  JSON
+  - JSON.parse => Convert Text Data To JS Object
+  - JSON.stringify => Convert JS Object To JSON
+*/
+
+// Get From Server
+
+// const myJsonObjectFromServer = '{"Username": "Osama", "Age": 39}';
+// console.log(typeof myJsonObjectFromServer);
+// console.log(myJsonObjectFromServer);
+
+// // Convert To JS Object
+// const myJsObject = JSON.parse(myJsonObjectFromServer);
+// console.log(typeof myJsObject);
+// console.log(myJsObject);
+
+// // Update Data
+// myJsObject["Username"] = "Elzero";
+// myJsObject["Age"] = 40;
+
+// // Send To Server
+// const myJsonObjectToServer = JSON.stringify(myJsObject);
+// console.log(typeof myJsonObjectToServer);
+// console.log(myJsonObjectToServer);
+
+/*
+  To Understand Ajax, Fetch, Promises
+
+  Asynchronous vs Synchronous Programming
+  - Meaning
+
+  Synchronous
+  - Operations Runs in Sequence
+  - Each Operation Must Wait For The Previous One To Complete
+  - Story From Real Life
+
+  Asynchronous
+  - Operations Runs In Parallel
+  - This Means That An Operation Can Occur while Another One Is Still Being Processed
+  - Story From Real Life
+
+  - Facebook As Example
+  - Simulation
+
+  Search
+  - JavaScript Is A Single-Threaded
+  - Multi Threaded Languages
+*/
+
+// Synchronous
+
+// console.log("1");
+// console.log("2");
+// window.alert("Operation");
+// console.log("3");
+
+// // Asynchronous
+// console.log("1");
+// console.log("2");
+// setTimeout(() => console.log("Operation"), 3000);
+// console.log("3");
